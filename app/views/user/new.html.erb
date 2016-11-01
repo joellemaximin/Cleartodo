@@ -1,0 +1,19 @@
+<h2>Create an account</h2>
+
+<%= model_error_messages(@user) %>
+
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, type: 'email', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= submit_tag 'Sign up', class: 'btn btn-primary' %>
+  </div>
+<% end %>

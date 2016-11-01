@@ -1,0 +1,15 @@
+<%= form_for :session, url: session_path do |f| %>
+  <div class="text-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, type: 'email' %>
+  </div>
+
+  <div class="password-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="submit-field">
+    <%= submit_tag 'Log in', class: 'btn btn-primary' %>
+  </div>
+<% end %>

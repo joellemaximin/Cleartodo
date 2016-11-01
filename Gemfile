@@ -37,6 +37,9 @@ gem 'coffee-script-source', '= 1.8.0'
 gem 'execjs'
 gem 'bootstrap-sass'
 gem 'clearance'
+gem 'model_error_messages'
+gem 'crystal_flash_messages'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails,' group: :development
 
