@@ -1,0 +1,17 @@
+<h1>Edit Todo</h1>
+
+<br>
+
+<%= form_for @todo do |f| %>
+  <%= model_error_messages(@todo) %>
+
+  <div class="input-group">
+    <%= f.text_field :content, class: 'form-control', autofocus: true %>
+
+    <span class="input-group-btn">
+       <%= submit_tag 'Update', class: 'btn btn-primary' %>
+    </span>
+  </div>
+
+  <%= hidden_field_tag(:editing_content, true) %> 
+<% end %>

@@ -1,0 +1,42 @@
+<h1>Your Todos</h1>
+
+<ul>
+  <% @todos_not_completed.each do |todo| %>
+    <li>
+      <%= todo.content %>
+      [
+        <%= link_to 'done', todo_path(todo, todo: {completed: true}), method: :patch %>
+        -
+        <%= link_to 'edit', edit_todo_path(todo) %>
+      ]
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for @todo do |f| %>
+  <%= model_error_messages(@todo) %>
+  
+  <div class="input-group">
+    <%= f.text_field :content, class: 'form-control', placeholder: 'Add another TODO ...' %>
+    <span class="input-group-btn">
+      <%= submit_tag 'Create', class: 'btn btn-primary' %>
+    </span>
+  </div>
+<% end %>
+
+<h2>Completed</h2>
+
+<ul>
+  <% @todos_completed.each do |todo| %>
+    <li>
+      <%= todo.content %>
+      [
+        <%= link_to 'not done', todo_path(todo, todo: {completed: false}), method: :patch %>
+        -
+        <%= link_to 'edit', edit_todo_path(todo) %>
+        -
+        <%= link_to 'delete', todo_path(todo), method: :delete, class: 'delete-todo' %>
+      ]
+    </li>
+  <% end %>
+</ul>
